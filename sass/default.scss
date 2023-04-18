@@ -4,9 +4,9 @@ html, body, a, div, p, strong, b, input, textarea, select, option, h1, h2, h3, h
 }
 
 html{
-    background: #333;
-    color: #eee;
     body{
+        background: #333;
+        color: #eee;
         display: flex;
         justify-content: center;
     }
@@ -29,5 +29,18 @@ html{
         &:hover{
             transform: rotate3d(0, 1, 0, 180deg)
         }
+    }
+}
+
+.dados{
+    max-width: 368px;
+    border-top: 1px dashed #ccc;
+    small{
+        font-weight: lighter;
+        font-size: 0.7em;
+        letter-spacing: 1px;
+    }
+    label{
+        font-size: 1em;
     }
 }
