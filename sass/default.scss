@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&display=swap');
+html, body, a, div, p, strong, b, input, textarea, select, option, h1, h2, h3, h4, h5{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+html{
+    background: #333;
+    color: #eee;
+    body{
+        display: flex;
+        justify-content: center;
+    }
+}
+.credit-card{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .5s;
+    width: 368px !important;
+    height: 482px !important;
+    .front{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        position: absolute;
+        background: url('../images/cc-front.png') no-repeat center center;
+        &:hover{
+            transform: rotate3d(0, 1, 0, 180deg)
+        }
+    }
+}
