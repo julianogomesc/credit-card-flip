@@ -12,13 +12,26 @@
 </head>
 <body>
     <div id="app">
-        <div class="credit-card">
-            <div class="front" ref="card">
-                <div id="number" v-html="dados.number"></div>
-                <div id="name" v-html="dados.name"></div>
+        <div class="credit-card" ref="card">
+            <div class="back">
+                <div id="cvv">
+                    <small>CVV</small><br>
+                    {{dados.cvv}}
+                </div>
+            </div>
+            <div class="front">
+                <div id="number" v-html="dados.number" v-if="dados.number != ''"></div>
+                <div v-else id="numbernull">**** **** **** ****</div>
+                <div id="name">
+                    <small>nome:</small> <br>
+                    {{dados.name}}
+                </div>
+                <div id="validate">
+                    <small>validade:</small> <br>
+                    {{dados.validate}}
+                </div>
             </div>
         </div>
-        
         <div class="dados py-4">
             <div class="row">
                 <div class="col-sm-12">
@@ -37,18 +50,19 @@
                 <div class="col-6 col-md-7">
                     <div class="form-group">
                         <label for="">Validade:</label>
-                        <input @focus="flip(0)" type="text" v-mask="'##/##'" class="form-control" placeholder="**/**">
+                        <input @focus="flip(0)" type="text" v-model="dados.validate" v-mask="'##/##'" class="form-control" placeholder="**/**">
                     </div>
                 </div>
                 <div class="col-6 col-md-5">
                     <div class="form-group">
                         <label for="">CVV:</label>
-                        <input @focus="flip(1)" ref="cvv" type="text" v-mask="'###'" class="form-control" placeholder="***">
+                        <input @focus="flip(1)" ref="cvv" type="text" v-model="dados.cvv" v-mask="'###'" class="form-control" placeholder="***">
                     </div>
                 </div>
             </div>
 
         </div>
+        
     </div>   
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -67,11 +81,11 @@
             methods:{
                 flip(value){
                     if(value == 0){
-                        this.$refs['card'].classList.add('some-class')
                         // frente do cartão
+                        this.$refs['card'].classList.remove('rotateY')
                     } else {
-                        this.$refs['card'].classList.remove('some-class')
                         // traseira do cartão
+                        this.$refs['card'].classList.add('rotateY')
                     }
                 }
             }

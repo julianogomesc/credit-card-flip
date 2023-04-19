@@ -11,23 +11,76 @@ html{
         justify-content: center;
     }
 }
+.rotateY{
+    transform: rotateY(180deg);
+}
+
 .credit-card{
-    display: flex;
-    justify-content: center;
     transform-style: preserve-3d;
-    transition: all .5s;
+    transition: all 0.5s;
+    position: inherit;
     width: 368px !important;
-    height: 482px !important; 
+    height: 250px !important;
     .front{
+        backface-visibility: hidden;
         width: 100%;
         height: 100%;
         display: flex;
-        // justify-content: center;
-        // align-items: center;
         position: absolute;
         background: url('../images/cc-front.png') no-repeat center center;
-        &:hover{
-            transform: rotate3d(0, 1, 0, 180deg)
+        #numbernull, #number{
+            position: relative;
+            display: block;
+            top: 6em;
+            left: 6.6em;
+            letter-spacing: 2px;
+            color: #bebebe;
+        }
+        #name{
+            small{
+                font-size: 0.7em;
+                text-transform: lowercase;
+                color: rgb(255, 214, 138);
+            }
+            display: block;
+            position: inherit;
+            top: 10em;
+            text-transform: uppercase;
+            left: 4em;
+            font-size: 0.9em;
+        }
+        #validate{
+            small{
+                font-size: 0.7em;
+                text-transform: lowercase;
+                color: rgb(255, 214, 138);
+            }
+            display: block;
+            position: inherit;
+            top: 10em;
+            right: 4.1em;
+            font-size: 0.9em;
+        }
+    }
+    .back{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        background: url('../images/cc-back.png') no-repeat center center;
+        #cvv{
+            transform: rotateY(180deg);
+            position: inherit;
+            top: 9.3em;
+            right: 3em;
+            line-height: 1.2em;
+            color: #FFF;
+            small{
+                color: #ffbb00;
+                line-height: 10px;
+                font-size: 0.7em;
+                text-transform: lowercase;
+            }
         }
     }
 }
