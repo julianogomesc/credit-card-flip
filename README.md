@@ -5,9 +5,9 @@ Uso do Gulp para minimificar e gerar o arquivo css do scss.
 
 <h2>Pré-requisitos</h2>
 <ul>
-<li>Nodejs</li>
-<li>NPM</li>
-<li>Gulp</li>
+<li>Nodejs (utilizei a versão 15.6.0) https://nodejs.org/en</li>
+<li>NPM (utilizei a versão 7.4.0)</li>
+<li>Gulp <code>npm install --global gulp-cli</code></li>
 </ul>
 
 <b>Após baixar o projeto, instale as dependências com:</b> 
