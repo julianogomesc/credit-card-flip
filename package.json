@@ -1,13 +1,13 @@
 {
   "name": "credit-card",
   "version": "1.0.0",
-  "description": "",
+  "description": "Credit card payment animation while put data on the form inputs using vuejs 2x, bootstrap and gulp to generate css files with sass. I'm using cdn to facilitate the implementation in another platforms. Only front-end files. The back-end and implementations with the payment gateway its gonna be your responsability.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["credit card", "vuejs", "payment", "front-end"],
+  "author": "Juliano Gomes da Costa - vetorart.com.br",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
